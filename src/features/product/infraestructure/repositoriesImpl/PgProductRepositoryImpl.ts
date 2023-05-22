@@ -1,4 +1,4 @@
-import { Product } from "../../domain/entities/product.js";
+import { Product } from "../../domain/entities/Product.js";
 import { ProductRepository } from "../../domain/repositories/ProductRepository.js";
 
 export class PgProductRepositoryImpl implements ProductRepository {
@@ -8,10 +8,7 @@ export class PgProductRepositoryImpl implements ProductRepository {
         return listProducts;
     }
     async createProduct(name: string, description: string, price: number): Promise<[Product, boolean]> {
-        console.log(description);
-
         const product = new Product({ name, description, price });
-        console.log(product.dataValues);
         const values = product.dataValues
         const response = await Product.findOrCreate({
             where: { name },
@@ -23,5 +20,11 @@ export class PgProductRepositoryImpl implements ProductRepository {
         })
         return response;
     }
-
+    async updateProduct(id:number,name: string, description: string, price: number): Promise<Product> {
+        return new Product();
+    }
+    async getById(id: number): Promise<Product | null> {
+        const tarjet= await Product.findByPk(id);
+        return tarjet;
+    }
 }
