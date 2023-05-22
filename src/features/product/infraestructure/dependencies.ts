@@ -7,12 +7,28 @@ import { GetByIdProductsUseCase } from '../aplication/usesCases/getByIdProductsU
 import { GetByIdProductController } from './controllers/getByIdProductController.js';
 import { UpdateProductController } from './controllers/updateProductController.js';
 import { UpdateProductUseCase } from '../aplication/usesCases/updateProductUseCase.js';
+import { DeleteProductController } from './controllers/deleteProductController.js';
+import { DeleteProductsUseCase } from "../aplication/usesCases/deleteProductUseCase.js";
+
+// Main repository
 const pgProductRepositoryImpl = new PgProductRepositoryImpl();
+
+//Dependency to get all products 
 const getAllProductsUseCase = new GetAllProductsUseCase(pgProductRepositoryImpl);
+export const getAllProductsController = new GetAllProductsController(getAllProductsUseCase)
+
+//Dependency to create a product
 const createProductUseCase = new CreateProductUseCase(pgProductRepositoryImpl);
+export const createProductController = new CreateProductController(createProductUseCase)
+
+//Dependency to get a product by id
 const getByIdProductUseCase = new GetByIdProductsUseCase(pgProductRepositoryImpl);
+export const getByIdProductController = new GetByIdProductController(getByIdProductUseCase)
+
+//Dependency to update a product
 const updateProductUseCase = new UpdateProductUseCase(pgProductRepositoryImpl);
 export const updateProductController= new UpdateProductController(updateProductUseCase);
-export const getByIdProductController = new GetByIdProductController(getByIdProductUseCase)
-export const getAllProductsController = new GetAllProductsController(getAllProductsUseCase)
-export const createProductController = new CreateProductController(createProductUseCase)
+
+//Dependenciy to delete a product
+const deleteProductsUseCase= new DeleteProductsUseCase(pgProductRepositoryImpl);
+export const deleteProductsController = new DeleteProductController(deleteProductsUseCase);

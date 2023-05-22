@@ -33,4 +33,15 @@ export class PgProductRepositoryImpl implements ProductRepository {
         const tarjet= await Product.findByPk(id);
         return tarjet;
     }
+
+    async deleteById(id: number): Promise<string>{
+        const tarjet= await Product.findByPk(id);
+        if (tarjet){
+            const {name}=tarjet
+            await tarjet.destroy();
+            return `Product with name: <${name}> successfully deleted`
+        }else{
+            return `Product with id: ${id} not found`;
+        }
+    }
 }
