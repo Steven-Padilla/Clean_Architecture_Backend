@@ -21,7 +21,13 @@ export class PgProductRepositoryImpl implements ProductRepository {
         return response;
     }
     async updateProduct(id:number,name: string, description: string, price: number): Promise<Product> {
-        return new Product();
+        const product=await this.getById(id)
+        await product.update({
+            name,
+            description,
+            price
+        })
+        return product;
     }
     async getById(id: number): Promise<Product | null> {
         const tarjet= await Product.findByPk(id);
