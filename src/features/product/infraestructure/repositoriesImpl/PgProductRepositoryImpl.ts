@@ -33,6 +33,10 @@ export class PgProductRepositoryImpl implements ProductRepository {
         const tarjet= await Product.findByPk(id);
         return tarjet;
     }
+    async getByName(name: string): Promise<Product | null> {
+        const tarjet= await Product.findOne({where:{name}});
+        return tarjet;
+    }
 
     async deleteById(id: number): Promise<string>{
         const tarjet= await Product.findByPk(id);

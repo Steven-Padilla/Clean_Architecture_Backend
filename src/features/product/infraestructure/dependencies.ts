@@ -9,6 +9,8 @@ import { UpdateProductController } from './controllers/updateProductController.j
 import { UpdateProductUseCase } from '../aplication/usesCases/updateProductUseCase.js';
 import { DeleteProductController } from './controllers/deleteProductController.js';
 import { DeleteProductsUseCase } from "../aplication/usesCases/deleteProductUseCase.js";
+import { GetByNameProductsUseCase } from '../aplication/usesCases/getByNameProductsUseCase.js';
+import { GetByNameProductController } from './controllers/getByNameProductController.js';
 
 // Main repository
 const pgProductRepositoryImpl = new PgProductRepositoryImpl();
@@ -32,3 +34,7 @@ export const updateProductController= new UpdateProductController(updateProductU
 //Dependenciy to delete a product
 const deleteProductsUseCase= new DeleteProductsUseCase(pgProductRepositoryImpl);
 export const deleteProductsController = new DeleteProductController(deleteProductsUseCase);
+
+//Dependency to get by name
+const getByNameUseCase = new GetByNameProductsUseCase(pgProductRepositoryImpl);
+export const getByNameProductsController =new GetByNameProductController(getByNameUseCase);

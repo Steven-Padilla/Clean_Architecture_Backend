@@ -1,4 +1,5 @@
 import express from 'express';
+import { getByNameProductsController } from './dependencies.js';
 const productRouter = express.Router();
 
 import { 
@@ -12,6 +13,7 @@ import {
 
 productRouter.get("/getall/",getAllProductsController.run.bind(getAllProductsController));
 productRouter.get("/getbyid/:id",getByIdProductController.run.bind(getByIdProductController));
+productRouter.get("/getbyname/:name",getByNameProductsController.run.bind(getByNameProductsController));
 
 productRouter.post("/createProduct/",createProductController.run.bind(createProductController));
 productRouter.post("/updateProduct/",updateProductController.run.bind(updateProductController));
