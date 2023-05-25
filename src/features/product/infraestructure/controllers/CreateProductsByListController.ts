@@ -12,7 +12,7 @@ export class CreateProductsByListController {
     const arrProductsJson = new Array<[string, string, number]>
     console.log(listProducts);
     
-    listProducts['products'].forEach((product)=>{
+    listProducts['products'].forEach((product: { name: string; description: string; price: number; })=>{
       arrProductsJson.push([product.name,product.description,product.price])
     })
     
