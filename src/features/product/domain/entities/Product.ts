@@ -1,10 +1,10 @@
 import { Model, DataTypes } from 'sequelize'
-import { postgresConnection } from '../../infraestructure/db/postgresqlDB.js';
+import { postgresConnection } from '../../infraestructure/db/postgresqlDB';
 export class Product extends Model {
     declare id: number;
-    name: string;
-    description: string;
-    price: number;
+    declare name: string;
+    declare description: string;
+    declare price: number;
 };
 
 Product.init({

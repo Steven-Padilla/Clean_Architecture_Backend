@@ -1,5 +1,5 @@
-import { Product } from "../../domain/entities/Product.js";
-import { ProductRepository } from "../../domain/repositories/ProductRepository.js";
+import { Product } from "../../domain/entities/Product";
+import { ProductRepository } from "../../domain/repositories/ProductRepository";
 
 export class PgProductRepositoryImpl implements ProductRepository {
 
@@ -43,12 +43,17 @@ export class PgProductRepositoryImpl implements ProductRepository {
     }
     async updateProduct(id:number,name: string, description: string, price: number): Promise<Product> {
         const product=await this.getById(id)
-        await product.update({
-            name,
-            description,
-            price
-        })
-        return product;
+        if (product) {
+            await product.update({
+                name,
+                description,
+                price
+            })
+            return product;
+        }else{
+            return new Product()
+        }
+        
     }
     async getById(id: number): Promise<Product | null> {
         const tarjet= await Product.findByPk(id);

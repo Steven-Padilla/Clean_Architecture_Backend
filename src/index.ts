@@ -1,7 +1,7 @@
 import express from 'express';
-import { config } from './config.js';
-import { productRouter } from './features/product/infraestructure/productRouter.js';
-import bodyParser from 'body-parser'
+import { config } from './config';
+import { productRouter } from './features/product/infraestructure/productRouter';
+import * as bodyParser from 'body-parser'
 const { port } = config.server;
 const app = express();
 

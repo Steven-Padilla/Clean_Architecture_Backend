@@ -1,7 +1,7 @@
 
 import { Request, Response } from "express";
-import { UpdateProductUseCase } from "../../aplication/usesCases/updateProductUseCase.js";
-import { Product } from "../../domain/entities/Product.js";
+import { UpdateProductUseCase } from "../../aplication/usesCases/updateProductUseCase";
+import { Product } from "../../domain/entities/Product";
 
 
 export class UpdateProductController {

@@ -1,7 +1,7 @@
 
 import { Request, Response } from "express";
-import { CreateProductUseCase } from "../../aplication/usesCases/createProductUseCase.js";
-import { Product } from "../../domain/entities/Product.js";
+import { CreateProductUseCase } from "../../aplication/usesCases/createProductUseCase";
+import { Product } from "../../domain/entities/Product";
 
 
 export class CreateProductController {

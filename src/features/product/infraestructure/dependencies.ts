@@ -1,18 +1,18 @@
-import { GetAllProductsUseCase } from "../aplication/usesCases/getAllProductsUseCase.js";
-import { CreateProductUseCase } from "../aplication/usesCases/createProductUseCase.js";
-import { GetAllProductsController } from "./controllers/getAllProductsController.js";
-import { CreateProductController } from "./controllers/CreateProductController.js";
-import { PgProductRepositoryImpl } from "./repositoriesImpl/PgProductRepositoryImpl.js";
-import { GetByIdProductsUseCase } from '../aplication/usesCases/getByIdProductsUseCase.js';
-import { GetByIdProductController } from './controllers/getByIdProductController.js';
-import { UpdateProductController } from './controllers/updateProductController.js';
-import { UpdateProductUseCase } from '../aplication/usesCases/updateProductUseCase.js';
-import { DeleteProductController } from './controllers/deleteProductController.js';
-import { DeleteProductsUseCase } from "../aplication/usesCases/deleteProductUseCase.js";
-import { GetByNameProductsUseCase } from '../aplication/usesCases/getByNameProductsUseCase.js';
-import { GetByNameProductController } from './controllers/getByNameProductController.js';
-import { CreateProductsByListUseCase } from '../aplication/usesCases/createProductsByListUseCase.js';
-import {CreateProductsByListController } from './controllers/CreateProductsByListController.js';
+import { GetAllProductsUseCase } from "../aplication/usesCases/getAllProductsUseCase";
+import { CreateProductUseCase } from "../aplication/usesCases/createProductUseCase";
+import { GetAllProductsController } from "./controllers/getAllProductsController";
+import { CreateProductController } from "./controllers/CreateProductController";
+import { PgProductRepositoryImpl } from "./repositoriesImpl/PgProductRepositoryImpl";
+import { GetByIdProductsUseCase } from '../aplication/usesCases/getByIdProductsUseCase';
+import { GetByIdProductController } from './controllers/getByIdProductController';
+import { UpdateProductController } from './controllers/updateProductController';
+import { UpdateProductUseCase } from '../aplication/usesCases/updateProductUseCase';
+import { DeleteProductController } from './controllers/deleteProductController';
+import { DeleteProductsUseCase } from "../aplication/usesCases/deleteProductUseCase";
+import { GetByNameProductsUseCase } from '../aplication/usesCases/getByNameProductsUseCase';
+import { GetByNameProductController } from './controllers/getByNameProductController';
+import { CreateProductsByListUseCase } from '../aplication/usesCases/createProductsByListUseCase';
+import {CreateProductsByListController } from './controllers/CreateProductsByListController';
 
 // Main repository
 const pgProductRepositoryImpl = new PgProductRepositoryImpl();

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { DeleteProductsUseCase } from "../../aplication/usesCases/deleteProductUseCase.js";
+import { DeleteProductsUseCase } from "../../aplication/usesCases/deleteProductUseCase";
 
 export class DeleteProductController {
   constructor(readonly deleteProductsUseCase: DeleteProductsUseCase) { }

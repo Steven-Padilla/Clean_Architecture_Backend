@@ -1,4 +1,4 @@
-import { ProductRepository } from "../../domain/repositories/ProductRepository.js";
+import { ProductRepository } from "../../domain/repositories/ProductRepository";
 
 export class GetByIdProductsUseCase {
     constructor (

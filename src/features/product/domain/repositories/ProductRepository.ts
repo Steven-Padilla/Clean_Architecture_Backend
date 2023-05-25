@@ -1,4 +1,4 @@
-import { Product } from "../entities/Product.js";
+import { Product } from "../entities/Product";
 
 export interface ProductRepository {
     getAll(): Promise<Array<Product>>;

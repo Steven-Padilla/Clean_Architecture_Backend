@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { GetByNameProductsUseCase } from "../../aplication/usesCases/getByNameProductsUseCase.js";
+import { GetByNameProductsUseCase } from "../../aplication/usesCases/getByNameProductsUseCase";
 
 export class GetByNameProductController {
   constructor(readonly getByNameProductsUseCase: GetByNameProductsUseCase) { }
