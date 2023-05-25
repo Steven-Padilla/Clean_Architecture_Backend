@@ -11,6 +11,8 @@ import { DeleteProductController } from './controllers/deleteProductController.j
 import { DeleteProductsUseCase } from "../aplication/usesCases/deleteProductUseCase.js";
 import { GetByNameProductsUseCase } from '../aplication/usesCases/getByNameProductsUseCase.js';
 import { GetByNameProductController } from './controllers/getByNameProductController.js';
+import { CreateProductsByListUseCase } from '../aplication/usesCases/createProductsByListUseCase.js';
+import {CreateProductsByListController } from './controllers/CreateProductsByListController.js';
 
 // Main repository
 const pgProductRepositoryImpl = new PgProductRepositoryImpl();
@@ -22,6 +24,10 @@ export const getAllProductsController = new GetAllProductsController(getAllProdu
 //Dependency to create a product
 const createProductUseCase = new CreateProductUseCase(pgProductRepositoryImpl);
 export const createProductController = new CreateProductController(createProductUseCase)
+
+//Dependency to create a product
+const createProductsByListUseCase = new CreateProductsByListUseCase(pgProductRepositoryImpl);
+export const createProductsByListController = new CreateProductsByListController(createProductsByListUseCase);
 
 //Dependency to get a product by id
 const getByIdProductUseCase = new GetByIdProductsUseCase(pgProductRepositoryImpl);
